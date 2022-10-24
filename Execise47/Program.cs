@@ -20,7 +20,7 @@ double[,] CreateMatrixRndDouble(int rows, int columns, double min, double max)
     return matrix;
 }
 
-void PrintArray(double[,] matrix)
+void PrintMatrix(double[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
@@ -35,4 +35,4 @@ void PrintArray(double[,] matrix)
 }
 
 double[,] array2D = CreateMatrixRndDouble(4, 4, -100, 100);
-PrintArray(array2D);
+PrintMatrix(array2D);
