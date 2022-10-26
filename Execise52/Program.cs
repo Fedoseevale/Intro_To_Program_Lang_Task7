@@ -64,7 +64,7 @@ void PrintArray(double[] array)
     }
 }
 
-Console.WriteLine($"Задан массив: ");
+Console.WriteLine("Задан массив: ");
 
 int[,] array2D = CreateMatrixRndInt(5, 5, 1, 10);
 
