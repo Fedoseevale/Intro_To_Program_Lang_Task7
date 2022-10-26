@@ -21,7 +21,7 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
     return matrix;
 }
 
-void PrintArray(int[,] matrix)
+void PrintMatrix(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
@@ -35,18 +35,33 @@ void PrintArray(int[,] matrix)
     }
 }
 
+Console.WriteLine("Задан массив:");
+
 int[,] array2D = CreateMatrixRndInt(4, 4, 0, 10);
-PrintArray(array2D);
+PrintMatrix(array2D);
 
 Console.WriteLine("Введите номер строки интересующего элемента: ");
 int number1 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите номер столбца интересующего элемента: ");
 int number2 = Convert.ToInt32(Console.ReadLine());
-int number = 0;
+
+if ((number1 < 0) | (number2 < 0))
+{
+    Console.WriteLine($"{number1}, {number2} -> введено недопустимое значение");
+}
+
+if ((number1 >= array2D.GetLength(0)) | (number2 >= array2D.GetLength(1)))
+{
+    Console.WriteLine($"{number1}, {number2} -> такого элемента в массиве нет");
+}
 
 if ((number1 < array2D.GetLength(0)) && (number2 < array2D.GetLength(1)))
 {
-    Console.WriteLine($"{number1}, {number2} -> {number = array2D[number1, number2]}");
+    int number = array2D[number1, number2];
+    Console.WriteLine($"{number1}, {number2} -> значение этого элемента равно {number}");
 }
 
-else Console.WriteLine($"{number1}, {number2} -> такого элемента в массиве нет");
+
+
+
+
