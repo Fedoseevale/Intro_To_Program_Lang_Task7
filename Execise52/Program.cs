@@ -46,7 +46,7 @@ double[] AverageEachColomn(int[,] matrix)
         {
             sum = sum + matrix[i, j];
         }
-        average = Math.Round (sum / matrix.GetLength(0), 1);
+        average = Math.Round(sum / matrix.GetLength(0), 1);
         array[j] = average;
         average = 0;
         sum = 0;
@@ -64,6 +64,7 @@ void PrintArray(double[] array)
     }
 }
 
+Console.WriteLine($"Задан массив: ");
 
 int[,] array2D = CreateMatrixRndInt(5, 5, 1, 10);
 
